@@ -1,0 +1,64 @@
+/* SpinWheel.css */
+.spin-wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  }
+  
+  .wheel {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(
+      #ded4af 0% 16.6%,
+      #b08263 16.6% 33.2%,
+      #6696b4 33.2% 49.8%,
+      #f3768f 49.8% 66.4%,
+      #94314a 66.4% 83%,
+      #753c58 83% 100%
+    );
+    transition: transform 3s ease-out;
+  }
+  
+  .wheel-segment {
+    position: absolute;
+    transform: rotate(calc(360deg / 6 * var(--index))) translateY(-140px);
+    font-weight: bold;
+    color: white;
+  }
+  
+  .spinning {
+    transform: rotate(720deg); /* Adjust the rotation for how much it should spin */
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: hsl(258, 100%, 50%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  button:hover:enabled {
+    background-color: #ac0a7e;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
